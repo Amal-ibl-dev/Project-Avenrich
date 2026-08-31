@@ -1,7 +1,7 @@
 
 import Image from "next/image";
-import { Card } from "../ui/Card";
-import teaGardenHero from "../../assets/images/tea-garden-hero.png";
+import { Card } from "../../ui/Card"
+import teaGardenHero from "../../assets/images/tea-garden-hero.png"
 
 export function LoginBanner() {
   return (

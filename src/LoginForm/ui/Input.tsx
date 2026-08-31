@@ -1,5 +1,5 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
-import { cn } from "../../utils/cn";
+import { cn } from "../utils/cn";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Field label rendered above the input, next to the icon. */

@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Lock } from "lucide-react";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
-import { Checkbox } from "../ui/Checkbox";
+import { Input } from "../../ui/Input";
+import { Button } from "../../ui/Button";
+import { Checkbox } from "../../ui/Checkbox";
 import {
   loginSchema,
   type LoginFormValues,
