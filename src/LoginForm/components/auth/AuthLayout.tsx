@@ -4,7 +4,7 @@ import { LoginBanner } from "./LoginBanner";
 export interface AuthLayoutProps {
   children: ReactNode;
 }
-
+//Check
 /**
  * Shell for all auth screens: a 50/50 split on large screens (brand banner
  * left, form right), collapsing to a form-only single column on mobile
