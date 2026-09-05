@@ -10,7 +10,7 @@ interface MetricsCardProps {
 export function MetricsCard({ metrics }: MetricsCardProps) {
   return (
     <div
-      className="flex w-full flex-shrink-0 flex-col justify-between rounded-3xl p-7 lg:w-[320px]"
+      className="flex w-[402px] flex-shrink-0 flex-col justify-between rounded-3xl p-7 lg:w-[320px]"
       style={{
         background: `linear-gradient(180deg, ${COLORS.forestGreen} 0%, ${COLORS.forestGreenDark} 100%)`,
       }}

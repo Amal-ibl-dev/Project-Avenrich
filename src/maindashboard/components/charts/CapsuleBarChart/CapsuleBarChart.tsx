@@ -1,3 +1,4 @@
+"use client"
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { CapsuleBar } from "./CapsuleBar";
 import { ChartTooltip } from "./ChartTooltip";

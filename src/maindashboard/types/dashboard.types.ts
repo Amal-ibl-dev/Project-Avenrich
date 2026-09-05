@@ -4,7 +4,8 @@ import type { LucideIcon } from "lucide-react";
 export interface NavItem {
   label: string;
   icon: LucideIcon;
-  href?: string;
+  /** Route path this item links to, e.g. "/sales". Required for real navigation. */
+  path: string;
   active?: boolean;
 }
 
@@ -62,3 +63,17 @@ export type DashboardTab =
 
 /** Time-range filter shown in the dashboard header. */
 export type DashboardPeriod = "Weekly" | "Month" | "Yearly";
+
+/** A named group of sidebar nav items for one department/module (e.g. "Sales"). */
+export interface SidebarConfig {
+  menuLabel: string;
+  items: NavItem[];
+}
+
+/** Currently signed-in user, shown in the top nav profile card. */
+export interface CurrentUser {
+  name: string;
+  role: string;
+  email: string;
+  avatarUrl: string;
+}

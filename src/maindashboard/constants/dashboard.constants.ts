@@ -1,17 +1,8 @@
-import {
-  ShoppingBag,
-  Link2,
-  Wallet,
-  Leaf,
-  ClipboardList,
-  ShieldCheck,
-  Settings,
-  HelpCircle,
-  LogOut,
-} from "lucide-react";
+import { Settings, HelpCircle, LogOut } from "lucide-react";
 import { COLORS } from "./theme.constants";
 import type {
   CashFlowPoint,
+  CurrentUser,
   DashboardTab,
   IncomeSegment,
   MetricItem,
@@ -20,19 +11,10 @@ import type {
   ProductionSlice,
 } from "../types/dashboard.types";
 
-export const DEPARTMENT_NAV_ITEMS: NavItem[] = [
-  { label: "Sales Department", icon: ShoppingBag },
-  { label: "Supply Chain Department", icon: Link2 },
-  { label: "Financial Department", icon: Wallet },
-  { label: "Tea Department", icon: Leaf },
-  { label: "Inventory Department", icon: ClipboardList },
-  { label: "Quality Department", icon: ShieldCheck },
-];
-
 export const GENERAL_NAV_ITEMS: NavItem[] = [
-  { label: "Settings", icon: Settings },
-  { label: "Help & Support", icon: HelpCircle },
-  { label: "Log Out", icon: LogOut },
+  { label: "Settings", icon: Settings, path: "/settings" },
+  { label: "Help & Support", icon: HelpCircle, path: "/help" },
+  { label: "Log Out", icon: LogOut, path: "/logout" },
 ];
 
 export const DASHBOARD_TABS: DashboardTab[] = [
@@ -95,7 +77,7 @@ export const CASH_FLOW: CashFlowPoint[] = [
   { month: "Oct", inflow: 90, outflow: 72 },
 ];
 
-export const CURRENT_USER = {
+export const CURRENT_USER: CurrentUser = {
   name: "Lionel de Silva",
   role: "Admin",
   email: "lionelad@gmail.com",

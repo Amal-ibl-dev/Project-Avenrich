@@ -1,14 +1,10 @@
-import { AuthLayout } from "../LoginForm/components/auth/AuthLayout"
-import { LoginForm } from "../LoginForm/components/auth//LoginForm"
-import MainDashbord from "../maindashboard/pages/FinancialDashboard"
+import { redirect } from "next/navigation";
 
-
-export default function LoginPage() {
-  return (
-    //Check
-    // <AuthLayout>
-    //   <LoginForm />
-    // </AuthLayout>
-    <MainDashbord />
-  );
+/**
+ * Root route. This is a Server Component — redirect() here runs on the
+ * server before any HTML is sent, so there's no client-side router
+ * involved (unlike react-router's <Navigate>, which requires a browser).
+ */
+export default function Home() {
+  redirect("/financial");
 }

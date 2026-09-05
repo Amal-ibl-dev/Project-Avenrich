@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
 import { Sidebar } from "../components/layout/Sidebar";
 import { TopNav } from "../components/layout/TopNav";
@@ -18,6 +19,7 @@ import {
   MONTHLY_FLOW,
   PRODUCTION_SLICES,
 } from "../constants/dashboard.constants";
+import { FINANCIAL_SIDEBAR } from "../constants/navigation.constants";
 import type { DashboardPeriod, DashboardTab } from "../types/dashboard.types";
 
 const PERIODS: DashboardPeriod[] = ["Weekly", "Month", "Yearly"];
@@ -33,7 +35,7 @@ export default function FinancialDashboard() {
       className="flex min-h-screen bg-[#F4F5F7] text-gray-800"
       style={{ fontFamily: "Inter, system-ui, sans-serif" }}
     >
-      <Sidebar />
+      <Sidebar menuLabel={FINANCIAL_SIDEBAR.menuLabel} items={FINANCIAL_SIDEBAR.items} />
 
       <main className="flex min-w-0 flex-1 flex-col">
         <TopNav />
