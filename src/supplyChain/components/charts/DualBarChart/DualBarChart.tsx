@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 export interface DualBarCategory {
   label: string;
-  /** 0–100 normalized bar heights. */
+  /** Raw values — any positive numbers, any scale (percent, KG, currency...). */
   valueA: number;
   valueB: number;
 }
@@ -19,7 +19,20 @@ interface DualBarChartProps {
   gapBetweenGroupsPx?: number;
 }
 
-
+/**
+ * Two rounded-pill bars per category, side by side, both rising from a
+ * shared baseline. Used for "Ordered vs Received" and "Expected vs Actual"
+ * style comparisons — anywhere two series need a simple grouped-bar view
+ * without the split-half/tooltip behavior of CapsuleBarChart.
+ *
+ * Bar heights are auto-scaled to the largest value actually present in
+ * `data` (not assumed to already be 0–100). This means the chart works
+ * correctly whether the caller passes percentages, raw KG quantities,
+ * currency amounts, or anything else — the tallest bar in the dataset
+ * always fills `maxHeightPx`, and every other bar is proportional to it.
+ * Passing a value larger than the previous "0–100" assumption used to blow
+ * bars past their container; auto-scaling removes that failure mode.
+ */
 export function DualBarChart({
   data,
   colorA,
@@ -31,6 +44,13 @@ export function DualBarChart({
   gapWithinGroupPx = 6,
   gapBetweenGroupsPx = 28,
 }: DualBarChartProps) {
+  const maxValue = useMemo(() => {
+    const allValues = data.flatMap((d) => [d.valueA, d.valueB]);
+    const max = Math.max(...allValues, 0);
+    // Guard against an all-zero dataset dividing by zero.
+    return max > 0 ? max : 1;
+  }, [data]);
+
   return (
     <div className="w-full">
       <div className="mb-5 flex items-center gap-5 text-sm text-gray-600">
@@ -60,7 +80,7 @@ export function DualBarChart({
                 className="rounded-full"
                 style={{
                   width: barWidthPx,
-                  height: Math.max((category.valueA / 100) * maxHeightPx, 16),
+                  height: Math.max((category.valueA / maxValue) * maxHeightPx, 16),
                   background: `linear-gradient(180deg, ${colorA} 0%, ${colorA}CC 100%)`,
                 }}
               />
@@ -68,7 +88,7 @@ export function DualBarChart({
                 className="rounded-full"
                 style={{
                   width: barWidthPx,
-                  height: Math.max((category.valueB / 100) * maxHeightPx, 16),
+                  height: Math.max((category.valueB / maxValue) * maxHeightPx, 16),
                   background: `linear-gradient(180deg, ${colorB} 0%, ${colorB}CC 100%)`,
                 }}
               />

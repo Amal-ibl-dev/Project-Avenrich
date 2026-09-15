@@ -19,7 +19,7 @@ import type {
 export const SUPPLY_CHAIN_SIDEBAR: SidebarConfig = {
   menuLabel: "Menu",
   items: [
-    { label: "Supply Chain", icon: LayoutGrid, path: "/supply-chain" },
+    { label: "Supply Chain", icon: LayoutGrid, path: "/supplyChain" },
     { label: "Product List", icon: Package, path: "/supply-chain/products" },
     { label: "Production Order List", icon: ClipboardList, path: "/supply-chain/production-orders" },
     { label: "Supplier List", icon: Users, path: "/supply-chain/suppliers" },

@@ -1,5 +1,10 @@
 import { redirect } from "next/navigation";
-import SupplyChainDashboard from "../supply-chain/pages/SupplyChainDashboard";
+import SupplyChainDashboard from "../supplyChain/pages/SupplyChainDashboard";
+import FinancialDashboard from "../maindashboard/pages/FinancialDashboard";
+import FinancialOverviewPage from "../Financial-Overvew/pages/FinancialOverviewPage";
+import BlendOverviewPage from "../blend-overview/pages/BlendOverviewPage";
+import InventoryDashboardPage from "../inventoryDashboard/pages/InventoryDashboardPage";
+import QualityDashboardPage from "../qualityDashboard/pages/QualityDashboardPage";
 
 /**
  * Root route. This is a Server Component — redirect() here runs on the
@@ -11,5 +16,5 @@ import SupplyChainDashboard from "../supply-chain/pages/SupplyChainDashboard";
 // }
 
 export default function SupplyChainPage() {
-  return <SupplyChainDashboard />;
+  return <FinancialOverviewPage />;
 }
