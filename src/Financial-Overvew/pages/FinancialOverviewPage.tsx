@@ -4,7 +4,7 @@ import React from "react";
 import { Sidebar } from "../../maindashboard/components/layout/Sidebar"
 import { TopNav } from "../../maindashboard/components/layout/TopNav";
 import { PageHeader } from "../../maindashboard/components/layout/PageHeader";
-import { PeriodDropdown } from "../../supply-chain/components/common/PeriodDropdown"
+import { PeriodDropdown } from "../../supplyChain/components/common/PeriodDropdown"
 import {
   StatCard,
   TotalsBar,

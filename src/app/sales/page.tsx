@@ -1,4 +1,5 @@
-import SalesDashboard from "../../maindashboard/pages/SalesDashboard";
+import SalesDashboard from "@/src/maindashboard/pages/SalesDashboard";
+
 
 /** Route: /sales */
 export default function SalesPage() {

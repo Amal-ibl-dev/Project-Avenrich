@@ -1,10 +1,8 @@
-import SalesDashboard from "../../../maindashboard/pages/SalesDashboard";
+import SalesOrderListPage from "@/src/maindashboard/pages/SalesOrderListPage";
 
-/**
- * Route: /sales/orders
- * Placeholder — currently renders the same dashboard as /sales.
- * Replace with a dedicated SalesOrderListPage component when built.
- */
+SalesOrderListPage
+
+/** Route: /sales/orders */
 export default function SalesOrdersPage() {
-  return <SalesDashboard />;
+  return <SalesOrderListPage />;
 }

@@ -1,9 +1,8 @@
-import SalesDashboard from "../../../maindashboard/pages/SalesDashboard";
+import OverallSalesReportPage from "@/src/maindashboard/pages/OverallSalesReportPage";
 
-/**
- * Route: /sales/report
- * Placeholder — swap for a dedicated report page component when built.
- */
+
+
+/** Route: /sales/report */
 export default function SalesReportPage() {
-  return <SalesDashboard />;
+  return <OverallSalesReportPage />;
 }

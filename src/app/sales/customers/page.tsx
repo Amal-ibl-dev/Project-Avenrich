@@ -1,9 +1,7 @@
-import SalesDashboard from "../../../maindashboard/pages/SalesDashboard";
+import CustomerListPage from "@/src/maindashboard/pages/CustomerListPage";
 
-/**
- * Route: /sales/customers
- * Placeholder — swap for a dedicated customer list page component when built.
- */
+
+/** Route: /sales/customers */
 export default function SalesCustomersPage() {
-  return <SalesDashboard />;
+  return <CustomerListPage />;
 }

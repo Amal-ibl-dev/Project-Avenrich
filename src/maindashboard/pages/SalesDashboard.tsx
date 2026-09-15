@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Sidebar } from "../components/layout/Sidebar";
@@ -12,6 +12,7 @@ import {
   CustomerCollaborationCard,
   EmailCard,
 } from "../components/sales";
+import { AddSalesOrderModal } from "../components/sales/orders/AddSalesOrderModal";
 import { SALES_SIDEBAR } from "../constants/navigation.constants";
 import {
   CUSTOMER_COLLABORATIONS,
@@ -23,6 +24,7 @@ import {
 
 export default function SalesDashboard() {
   const router = useRouter();
+  const [addOrderOpen, setAddOrderOpen] = useState(false);
 
   return (
     <div
@@ -37,7 +39,11 @@ export default function SalesDashboard() {
         <div className="flex-1 overflow-y-auto px-8 pb-8">
           <PageHeader
             title="Sales Department"
-            action={{ label: "Create Sales Order", icon: Plus }}
+            action={{
+              label: "Create Sales Order",
+              icon: Plus,
+              onClick: () => setAddOrderOpen(true),
+            }}
           />
 
           <div className="mb-5 flex flex-col gap-5 lg:flex-row">
@@ -63,6 +69,8 @@ export default function SalesDashboard() {
           </div>
         </div>
       </main>
+
+      <AddSalesOrderModal open={addOrderOpen} onClose={() => setAddOrderOpen(false)} />
     </div>
   );
 }

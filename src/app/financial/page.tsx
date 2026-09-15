@@ -1,4 +1,6 @@
-import FinancialDashboard from "../../maindashboard/pages/FinancialDashboard";
+import FinancialDashboard from "@/src/maindashboard/pages/FinancialDashboard";
+
+FinancialDashboard
 
 /**
  * Route: /financial

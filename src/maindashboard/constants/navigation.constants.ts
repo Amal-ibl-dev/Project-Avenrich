@@ -21,9 +21,9 @@ import type { SidebarConfig } from "../types/dashboard.types";
 export const FINANCIAL_SIDEBAR: SidebarConfig = {
   menuLabel: "Menu",
   items: [
-    { label: "Dashboard", icon: LayoutGrid, path: "/" },
+    { label: "Dashboard", icon: LayoutGrid, path: "/financial" },
     { label: "Sales Department", icon: ShoppingBag, path: "/sales" },
-    { label: "Supply Chain Department", icon: Link2, path: "/supplyChain" },
+    { label: "Supply Chain Department", icon: Link2, path: "/supply-chain" },
     { label: "Financial Department", icon: Wallet, path: "/financial" },
     { label: "Tea Department", icon: Leaf, path: "/tea" },
     { label: "Inventory Department", icon: ClipboardList, path: "/inventory" },

@@ -1,11 +1,10 @@
-"use client"
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { CapsuleBar } from "./CapsuleBar";
 import { ChartTooltip } from "./ChartTooltip";
 import { useActiveMonth } from "../../../hooks/useActiveMonth";
 import { clampTooltipOffset } from "../../../utils/chart.utils";
 import { COLORS } from "../../../constants/theme.constants";
-import type { MonthlyFlow } from "../../../types/dashboard.types"
+import type { MonthlyFlow } from "../../../types/dashboard.types";
 
 interface CapsuleBarChartProps {
   data: MonthlyFlow[];

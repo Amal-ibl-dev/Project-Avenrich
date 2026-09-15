@@ -16,7 +16,7 @@ const STATUS_VARIANT = {
 
 export function SalesOrderCard({ title, items, onViewAll }: SalesOrderCardProps) {
   return (
-    <div className="min-w-0 flex-1 rounded-3xl bg-gradient-to-b from-[#1F4529] to-[#2F7040] p-6">
+    <div className="min-w-0 flex-1 rounded-3xl bg-gradient-to-b from-[#1E5631] to-[#123A20] p-6">
       <div className="mb-2 flex items-center justify-between">
         <h3 className="text-lg font-bold text-white">{title}</h3>
         <button
