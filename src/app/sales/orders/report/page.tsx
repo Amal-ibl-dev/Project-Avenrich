@@ -1,8 +1,1 @@
-import SalesOrderReportPage from "@/src/maindashboard/pages/SalesOrderReportPage";
-
-SalesOrderReportPage
-
-/** Route: /sales/orders/report — single sales order detail (?orderId=...) */
-export default function SalesOrderReportRoute() {
-  return <SalesOrderReportPage />;
-}
+export { default } from "@/features/sales/screens/SalesOrderReportPage";

@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Design tokens, mirroring shared/theme/theme.constants.ts's COLORS/RADIUS/SHADOW.
+ * Components that only need a Tailwind class (bg-forest, rounded-card, ...) can
+ * use these directly. Components that need a raw hex/string value in JS/TS
+ * (recharts fill props, inline style objects driven by a status→tone map,
+ * etc.) keep importing COLORS from theme.constants.ts — the values below are
+ * kept in sync with that file by hand; if you rebrand, update both.
+ */
+@theme {
+  /* brand */
+  --color-forest-dark: #123A20;
+  --color-forest: #1E5631;
+  --color-forest-light: #EAF6EE;
+  --color-emerald: #2ECC71;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-crimson-dark: #5C1010;
+  --color-crimson: #990000;
+  --color-crimson-soft: #C0392B;
+
+  --color-gold: #E4C87A;
+
+  --color-indigo: #6C4AB6;
+  --color-sky: #5B8DEF;
+  --color-insight-bg: #F1F6FF;
+
+  /* surfaces & text */
+  --color-background: #F4F5F7;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  --color-hatch-line: #E2E5E0;
+  --color-hatch-border: #CFD3CD;
+  --color-divider: #E5E7EB;
+
+  /* status tones — mirrors list-theme.constants.ts's STATUS_TONE_STYLES */
+  --color-status-green: #1E7A45;
+  --color-status-green-bg: #EDF8F1;
+  --color-status-blue: #2F6BD6;
+  --color-status-blue-bg: #EDF3FE;
+  --color-status-amber: #B98A00;
+  --color-status-amber-bg: #FEF9E8;
+  --color-status-magenta: #B8399E;
+  --color-status-magenta-bg: #FBEEFB;
+  --color-status-red: #D64545;
+  --color-status-red-bg: #FDEDED;
+  --color-status-indigo: #2B2F8F;
+
+  /* radius / shadow */
+  --radius-card: 1.5rem;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme {
+    --color-background: #0F1210;
+    --color-surface: #16201A;
+    --color-text-primary: #ECEFEC;
+    --color-text-secondary: #A9B3AC;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
