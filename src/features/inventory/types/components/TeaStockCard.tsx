@@ -1,7 +1,7 @@
 import React from "react";
-import { DualBarChart } from "../../../shared/components/charts/DualBarChart/DualBarChart"
-import { SectionHeaderLink } from "../../../shared/components/ui/SectionHeaderLink";
-import type { TeaStockPoint } from "../types/inventory.types";
+import { DualBarChart } from "../../../../shared/components/charts/DualBarChart/DualBarChart"
+import { SectionHeaderLink } from "../../../../shared/components/ui/SectionHeaderLink";
+import type { TeaStockPoint } from "../../types/inventory.types";
 
 interface TeaStockCardProps {
   title: string;

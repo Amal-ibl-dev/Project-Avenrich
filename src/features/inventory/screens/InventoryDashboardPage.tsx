@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Mail, Plus } from "lucide-react";
 import { Sidebar } from "../../../shared/components/layout/Sidebar";
 import { TopNav } from "../../../shared/components/layout/TopNav";
@@ -13,7 +13,8 @@ import {
   StockValueCard,
   LowStockAlertCard,
   StockRegisterTable,
-} from "../components/index";
+} from "../types/components/index";
+import { StockApplicationModal, type StockApplicationPayload } from "../types/components/StockApplicationModal";
 import {
   INVENTORY_HERO_STATS,
   INVENTORY_MANAGER_USER,
@@ -38,6 +39,13 @@ import {
  * one-off case.
  */
 export default function InventoryDashboardPage() {
+  const [newInventoryOpen, setNewInventoryOpen] = useState(false);
+
+  function handleCreate(payload: StockApplicationPayload) {
+    // Mock-only: a real backend would persist this and refresh the dashboard's data.
+    console.log("New inventory item", payload);
+  }
+
   return (
     <div
       className="flex min-h-screen bg-[#F4F5F7] text-gray-800"
@@ -56,7 +64,10 @@ export default function InventoryDashboardPage() {
                 <Mail size={16} />
                 E-mail
               </button>
-              <button className="flex items-center gap-2 rounded-full border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-800 transition-colors hover:bg-gray-50">
+              <button
+                onClick={() => setNewInventoryOpen(true)}
+                className="flex items-center gap-2 rounded-full border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-800 transition-colors hover:bg-gray-50"
+              >
                 <Plus size={16} />
                 New Inventory
               </button>
@@ -91,6 +102,12 @@ export default function InventoryDashboardPage() {
           <StockRegisterTable title="Stock Register" rows={STOCK_REGISTER} />
         </div>
       </main>
+
+      <StockApplicationModal
+        open={newInventoryOpen}
+        onClose={() => setNewInventoryOpen(false)}
+        onSave={handleCreate}
+      />
     </div>
   );
 }

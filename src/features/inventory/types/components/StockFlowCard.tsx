@@ -1,7 +1,7 @@
 import React from "react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { SectionHeaderLink } from "../../../shared/components/ui/SectionHeaderLink";
-import type { StockFlowPoint } from "../types/inventory.types";
+import { SectionHeaderLink } from "../../../../shared/components/ui/SectionHeaderLink";
+import type { StockFlowPoint } from "../../types/inventory.types";
 
 interface StockFlowCardProps {
   title: string;

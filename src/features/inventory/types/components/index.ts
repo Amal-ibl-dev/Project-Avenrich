@@ -5,3 +5,4 @@ export { StockSplitCard } from "./StockSplitCard";
 export { StockValueCard } from "./StockValueCard";
 export { LowStockAlertCard } from "./LowStockAlertCard";
 export { StockRegisterTable } from "./StockRegisterTable";
+export { StockApplicationModal } from "./StockApplicationModal";

@@ -50,3 +50,37 @@ export interface StockRegisterRow {
   status: StockRegisterStatus;
   date: string;
 }
+
+// ---- Inventory List page ---------------------------------------------------
+
+/** The three material-type tabs, shared by the Inventory List filter tabs
+ *  and the Stock Application modal's "Material Type" panel. */
+export type StockCategory = "Finished Goods" | "Raw Material" | "Work in Progress";
+
+export type InventoryItemState = "IN_STOCK" | "LOW_STOCK" | "OUT_STOCK";
+
+export interface InventoryItemRow {
+  id: string;
+  stockCode: string;
+  productName: string;
+  category: StockCategory;
+  zoneBin: string;
+  quantityLabel: string;
+  unitsLabel: string;
+  state: InventoryItemState;
+  expiredDate: string;
+}
+
+// ---- Stock Application modal ------------------------------------------------
+
+export interface RawMaterialEntry {
+  id: string;
+  teaType: string;
+  unitPrice: string;
+}
+
+export interface WipEntry {
+  id: string;
+  quantityOfProcess: string;
+  startDate: string;
+}

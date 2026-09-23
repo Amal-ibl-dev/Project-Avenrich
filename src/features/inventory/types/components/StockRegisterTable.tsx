@@ -1,6 +1,6 @@
 import React from "react";
-import { SectionHeaderLink } from "../../../shared/components/ui/SectionHeaderLink";
-import type { StockRegisterRow, StockRegisterStatus } from "../types/inventory.types";
+import { SectionHeaderLink } from "../../../../shared/components/ui/SectionHeaderLink";
+import type { StockRegisterRow, StockRegisterStatus } from "../../types/inventory.types";
 
 interface StockRegisterTableProps {
   title: string;

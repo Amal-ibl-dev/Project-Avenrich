@@ -1,5 +1,5 @@
 import React from "react";
-import type { StockValueRow } from "../types/inventory.types";
+import type { StockValueRow } from "../../types/inventory.types";
 
 interface StockValueCardProps {
   title: string;

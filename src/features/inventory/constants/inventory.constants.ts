@@ -1,6 +1,7 @@
 import { LayoutGrid, List, Package, Archive, TrendingUp, Warehouse } from "lucide-react";
 import type { SidebarConfig } from "../../../shared/types/navigation.types"
 import type {
+  InventoryItemRow,
   StockAlertRow,
   StockFlowPoint,
   StockRegisterRow,
@@ -79,3 +80,32 @@ export const STOCK_REGISTER: StockRegisterRow[] = [
   { id: "sr-5", orderCode: "OrO001", productName: "Jasmine Green Tea", category: "Raw Material", quantity: 18400, unit: "KG", status: "In Progress", date: "11th May 2026" },
   { id: "sr-6", orderCode: "OrO001", productName: "Jasmine Green Tea", category: "Raw Material", quantity: 18400, unit: "KG", status: "In Progress", date: "11th May 2026" },
 ];
+
+// ---- Inventory List page ---------------------------------------------------
+
+export const INVENTORY_LIST_STATS = {
+  dailyTurnoverUnits: "842 Units",
+  dailyTurnoverChange: "+12% from yesterday",
+  lowStockAlertSkus: "18 SKUs",
+  expiringItems: "04 Items",
+};
+
+export const INVENTORY_ITEMS: InventoryItemRow[] = [
+  { id: "inv-1", stockCode: "SK-1120", productName: "Black Tea Leaves", category: "Raw Material", zoneBin: "North-B Bin- 422", quantityLabel: "140 KG", unitsLabel: "56 Units", state: "IN_STOCK", expiredDate: "12th June 2026" },
+  { id: "inv-2", stockCode: "SK-1120", productName: "Herbal Tea", category: "Raw Material", zoneBin: "North-B Bin- 422", quantityLabel: "140 KG", unitsLabel: "56 Units", state: "LOW_STOCK", expiredDate: "12th June 2026" },
+  { id: "inv-3", stockCode: "SK-1120", productName: "Black Tea Leaves", category: "Raw Material", zoneBin: "North-B Bin- 422", quantityLabel: "140 KG", unitsLabel: "56 Units", state: "IN_STOCK", expiredDate: "12th June 2026" },
+  { id: "inv-4", stockCode: "SK-1120", productName: "Black Tea Leaves", category: "Raw Material", zoneBin: "North-B Bin- 422", quantityLabel: "140 KG", unitsLabel: "56 Units", state: "OUT_STOCK", expiredDate: "12th June 2026" },
+  { id: "inv-5", stockCode: "SK-1121", productName: "White Tea Blend", category: "Finished Goods", zoneBin: "North-A Bin- 118", quantityLabel: "80 KG", unitsLabel: "32 Units", state: "IN_STOCK", expiredDate: "02nd Aug 2026" },
+  { id: "inv-6", stockCode: "SK-1122", productName: "Ceylon Gold Blend", category: "Work in Progress", zoneBin: "South-C Bin- 09", quantityLabel: "60 KG", unitsLabel: "24 Units", state: "LOW_STOCK", expiredDate: "18th Jul 2026" },
+];
+
+export const INVENTORY_ZONE_OPTIONS = ["North-A", "North-B", "South-C", "West-D"];
+export const INVENTORY_CATEGORY_OPTIONS: string[] = ["Finished Goods", "Raw Material", "Work in Progress"];
+export const INVENTORY_STATE_OPTIONS = ["In Stock", "Low Stock", "Out Stock"];
+
+// ---- Stock Application modal ------------------------------------------------
+
+export const CERTIFICATION_OPTIONS = ["Organic", "Fair Trade", "Rainforest Alliance", "ISO 22000"];
+export const TEA_TYPE_OPTIONS = ["Herbal Tea", "Black Tea", "Green Tea", "White Tea", "Jasmine Tea"];
+export const RAW_MATERIAL_STOCK_OPTIONS = ["Black Tea Leaves", "Herbal Tea", "Liquid Flavor", "Honey Granules"];
+export const WIP_STOCK_OPTIONS = ["Ceylon Gold Blend", "Early Gray Blend", "Jasmine Green Blend"];

@@ -1,5 +1,5 @@
 import React from "react";
-import type { StockAlertRow, StockAlertStatus } from "../types/inventory.types";
+import type { StockAlertRow, StockAlertStatus } from "../../types/inventory.types";
 
 interface LowStockAlertCardProps {
   title: string;

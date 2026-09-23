@@ -1,6 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import type { StockSplitSlice } from "../types/inventory.types";
+import type { StockSplitSlice } from "../../types/inventory.types";
 
 interface StockSplitCardProps {
   title: string;
